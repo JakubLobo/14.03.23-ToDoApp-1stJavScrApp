@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+</head>
+<body>
+    <button id="todo-button" onclick="changeButton()">To Do</button> <br><br>
+
+    <div id="counter" style="display:inline-block;">0</div>
+    <button onclick="goUp()">Up</button>
+    <br><br>
+
+    <div id="counter2" style="display:inline-block;">0</div>
+    <button onclick="goDown()">Down</button>
+    <br><br>
+    
+    <div>Text adder</div>
+    <input id="thisText" placeholder="Add text here"></input>
+    <button onclick="addText()">Add to the page</button>
+
+    <script>
+        function changeButton() {
+            let element = document.getElementById('todo-button');
+            element.innerText = 'Done';
+        }
+
+        let count = 0;
+        function goUp() {
+            let counter = document.getElementById('counter');
+            count = count + 1;
+            counter.innerText = count;
+        }
+
+        let count2 = 0;
+        function goDown() {
+            let conter2 = document.getElementById('counter2');
+            count2 = count2 - 1;
+            counter2.innerText = count2;
+        }
+
+        function addText() {
+            let thisText = document.getElementById('thisText');
+            let text = thisText.value;
+            let element = document.createElement('div');
+            element.innerText = text;
+            document.body.append(element);
+        }
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12</title>
+</head>
+<body>
+    <script>
+        function aboveFreezing(temps) {
+            const tempsAboveFreezing = temps.filter(function (temp) {
+                return temp > 0;
+            });
+            let result = document.createElement('div');
+            result.innerText = tempsAboveFreezing;
+            document.body.appendChild(result);
+        }
+        aboveFreezing([40, -7, 0, -12, 7, 30]);
+
+
+        function removeRed (foodArray) {
+            let notRed = foodArray.filter(function(food) {
+               return food.color !== 'red';
+            });
+            let result = document.createElement('div');
+            result.innerText = notRed.name + ' ' + notRed.color;
+            document.body.append(result);
+        }
+
+        removeRed([{name: 'Apple', color: 'red'}, {name: 'cabbage', color: 'violet'}]);
+    </script>
+</body>
+</html>

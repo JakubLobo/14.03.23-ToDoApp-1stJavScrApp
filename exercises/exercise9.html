@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9</title>
+</head>
+<body>
+    <div style="display:flex;">
+        <div style="flex:1">
+            <h2>Cart</h2>
+            <button onclick="addItem('Apple')">Apple</button>
+            <button onclick="addItem('Tomato')">Tomato</button>
+            <button onclick="addItem('Eggs')">Eggs</button>
+            <button onclick="clearShit()">Clear</button>
+        
+            <div id="cart"></div>
+        </div>
+
+        <div id="converter" style="flex:1">
+            <h2>Converter</h2>
+            <input id="value" type="text" placeholder="Type the value"></input>
+            <button onclick="cmConvert()">Convert to cm</button>
+            <button onclick="inchConvert()">Convert to inch</button>
+        </div>
+    </div>
+    
+    <br><br>
+    
+
+    <script>
+        let toto = document.getElementById('cart');
+
+        function addItem(food) {
+            let element = document.createElement('div');
+            element.innerText = food;
+            toto.appendChild(element);
+        }
+
+        function clearShit() {
+            toto.innerHTML = '';
+        }
+
+
+        function cmConvert() {
+            const measurement = document.getElementById('value').value;
+            const converted = measurement * 2.54;
+            const result = document.createElement('div');
+            result.innerText = converted;
+            document.getElementById('converter').append(result);
+        }
+     
+    </script>
+    
+</body>
+</html>
